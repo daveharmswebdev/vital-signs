@@ -1,7 +1,9 @@
 import React from 'react';
 import { Scene, Router } from 'react-native-router-flux';
+import { Actions } from 'react-native-router-flux';
 import LoginForm from './components/LoginForm';
 import Vitals from './components/Vitals';
+import VitalSignsCreate from './components/VitalSignsCreate';
 
 const RouterComponent = () => {
   return (
@@ -12,12 +14,13 @@ const RouterComponent = () => {
 
       <Scene key="main">
         <Scene
-          onRight={() => console.log('add vital sign!')}
+          onRight={() => Actions.vsCreate()}
           rightTitle="Add" 
           key="vitals" 
           component={Vitals} 
           title="Vital Signs" 
         />
+        <Scene key="vsCreate" component={VitalSignsCreate} title="New Vital Signs" />
       </Scene>
     </Router>
   );
