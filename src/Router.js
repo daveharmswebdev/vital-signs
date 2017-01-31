@@ -19,6 +19,7 @@ const RouterComponent = () => {
           key="vitals" 
           component={Vitals} 
           title="Vital Signs" 
+          initial
         />
         <Scene key="vsCreate" component={VitalSignsCreate} title="New Vital Signs" />
       </Scene>
