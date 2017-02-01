@@ -1,6 +1,8 @@
 import firebase from 'firebase';
+import { Actions } from 'react-native-router-flux';
 import {
-  VS_UPDATE
+  VS_UPDATE,
+  VS_CREATE
 } from './types';
 
 export const vsUpdate = ({ prop, value }) => {
@@ -12,7 +14,13 @@ export const vsUpdate = ({ prop, value }) => {
 
 export const vsCreate = ({ sp, dp, pulse }) => {
   const { currentUser } = firebase.auth();
-  console.log('uid', currentUser.uid);
-  firebase.database().ref(`/users/${currentUser.uid}/vitalSigns`)
-    .push({ sp, dp, pulse });
+
+  return (dispatch) => {
+    firebase.database().ref(`/users/${currentUser.uid}/vitalSigns`)
+      .push({ sp, dp, pulse })
+      .then(() => {
+        dispatch({ type: VS_CREATE });
+        Actions.vitals({ type: 'reset' });
+      });
+  };
 };

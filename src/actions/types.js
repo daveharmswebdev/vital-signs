@@ -5,3 +5,4 @@ export const LOGIN_USER_FAIL = 'login_user_fail';
 export const LOGIN_USER = 'login_user';
 
 export const VS_UPDATE = 'vs_update';
+export const VS_CREATE = 'vs_create';
