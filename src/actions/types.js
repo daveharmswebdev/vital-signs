@@ -6,3 +6,4 @@ export const LOGIN_USER = 'login_user';
 
 export const VS_UPDATE = 'vs_update';
 export const VS_CREATE = 'vs_create';
+export const VS_FETCH_SUCCESS = 'vs_fetch_success';

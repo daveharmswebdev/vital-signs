@@ -1,6 +1,6 @@
 import { 
   VS_UPDATE,
-  VS_CREATE 
+  VS_CREATE
 } from '../actions/types';
 
 const INITIAL_STATE = {

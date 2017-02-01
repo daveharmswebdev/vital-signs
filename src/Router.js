@@ -1,8 +1,7 @@
 import React from 'react';
-import { Scene, Router } from 'react-native-router-flux';
-import { Actions } from 'react-native-router-flux';
+import { Scene, Router, Actions } from 'react-native-router-flux';
 import LoginForm from './components/LoginForm';
-import Vitals from './components/Vitals';
+import VitalsList from './components/VitalsList';
 import VitalSignsCreate from './components/VitalSignsCreate';
 
 const RouterComponent = () => {
@@ -16,8 +15,8 @@ const RouterComponent = () => {
         <Scene
           onRight={() => Actions.vsCreate()}
           rightTitle="Add" 
-          key="vitals" 
-          component={Vitals} 
+          key="vitalsList" 
+          component={VitalsList} 
           title="Vital Signs" 
           initial
         />
