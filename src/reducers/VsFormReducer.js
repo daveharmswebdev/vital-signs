@@ -4,7 +4,8 @@ import {
 
 const INITIAL_STATE = {
   sp: '',
-  bp: ''
+  bp: '',
+  pulse: ''
 };
 
 export default (state = INITIAL_STATE, action) => {
